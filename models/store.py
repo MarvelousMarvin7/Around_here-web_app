@@ -1,10 +1,10 @@
 #!/usr/bin/python
 """holds class Store"""
 import models
-from models.base_model import BaseModel, Base, Enum
+from models.base_model import BaseModel, Base
 from os import getenv
 import sqlalchemy
-from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table, Time
+from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table, Time, Enum
 from sqlalchemy.orm import relationship
 
 if models.storage_t == 'db':
