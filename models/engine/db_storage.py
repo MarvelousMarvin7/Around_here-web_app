@@ -4,7 +4,7 @@ Contains the class DBStorage
 """
 
 import models
-from models.base_model import BaseModel
+from models.base_model import Base, BaseModel
 from models.user import User
 from models.store import Store
 from models.order import Order
@@ -26,17 +26,17 @@ class DBStorage:
 
     def __init__(self):
         """Instantiate a DBStorage object"""
-        AH_MYSQL_USER = getenv('AH_MYSQL_USER')
-        AH_MYSQL_PWD = getenv('AH_MYSQL_PWD')
-        AH_MYSQL_HOST = getenv('AH_MYSQL_HOST')
-        AH_MYSQL_DB = getenv('AH_MYSQL_DB')
-        AH_ENV = getenv('AH_ENV')
+        ARH_MYSQL_USER = getenv('ARH_MYSQL_USER')
+        ARH_MYSQL_PWD = getenv('ARH_MYSQL_PWD')
+        ARH_MYSQL_HOST = getenv('ARH_MYSQL_HOST')
+        ARH_MYSQL_DB = getenv('ARH_MYSQL_DB')
+        ARH_ENV = getenv('ARH_ENV')
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
-                                      format(AH_MYSQL_USER,
-                                             AH_MYSQL_PWD,
-                                             AH_MYSQL_HOST,
-                                             AH_MYSQL_DB))
-        if AH_ENV == "test":
+                                      format(ARH_MYSQL_USER,
+                                             ARH_MYSQL_PWD,
+                                             ARH_MYSQL_HOST,
+                                             ARH_MYSQL_DB))
+        if ARH_ENV == "test":
             Base.metadata.drop_all(self.__engine)
 
     def all(self, cls=None):
