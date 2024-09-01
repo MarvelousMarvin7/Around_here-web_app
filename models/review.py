@@ -11,7 +11,7 @@ class Review(BaseModel, Base):
     """Representation of Review """
     if models.storage_t == 'db':
         __tablename__ = 'reviews'
-        store_id = Column(String(60), ForeignKey('places.id'), nullable=False)
+        store_id = Column(String(60), ForeignKey('stores.id'), nullable=False)
         user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
         product_id = Column(String(60), ForeignKey('products.id'), nullable=True)
         text = Column(String(1024), nullable=False)

@@ -5,12 +5,13 @@ Contains the FileStorage class
 
 import json
 from models.base_model import BaseModel
-from models.user import User
-from models.store import Store
 from models.order import Order
-from models.product import Product
 from models.order_item import OrderItem
+from models.product import Product
 from models.review import Review
+from models.store import Store
+from models.user import User
+
 
 classes = {'BaseModel': BaseModel, 'User': User, 'Store': Store,
 'Order': Order, 'OrderItem': OrderItem, 'Product': Product, 'Review': Review}

@@ -2,25 +2,12 @@
 """holds class Store"""
 import models
 from models.base_model import BaseModel, Base
-from os import getenv
-import sqlalchemy
-from sqlalchemy import Column, String, Integer, Float, ForeignKey, Table, Time, Enum
+from sqlalchemy import Column, String, Time, ForeignKey
 from sqlalchemy.orm import relationship
-
-if models.storage_t == 'db':
-    store_product = Table('store_product', Base.metadata,
-                          Column('store_id', String(60),
-                                 ForeignKey('stores.id', onupdate='CASCADE',
-                                            ondelete='CASCADE'),
-                                 primary_key=True),
-                          Column('product_id', String(60),
-                                 ForeignKey('products.id', onupdate='CASCADE',
-                                            ondelete='CASCADE'),
-                                 primary_key=True))
 
 
 class Store(BaseModel, Base):
-    """Representation of Store """
+    """Representation of Store"""
     if models.storage_t == 'db':
         __tablename__ = 'stores'
         user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
@@ -31,9 +18,8 @@ class Store(BaseModel, Base):
         contact = Column(String(12), nullable=False)
         opening_time = Column(Time, nullable=False, default="00:00")
         reviews = relationship("Review", backref="store")
-        products = relationship("Product", secondary="store_product",
-                                 backref="store_products",
-                                 viewonly=False)
+        products = relationship("Product", backref="store",
+                                cascade="all, delete")
     else:
         user_id = ""
         name = ""

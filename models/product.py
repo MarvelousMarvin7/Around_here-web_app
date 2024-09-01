@@ -12,7 +12,8 @@ class Product(BaseModel, Base):
     """Representation of Product """
     if models.storage_t == 'db':
         __tablename__ = 'products'
-        store_id = Column(String(60), ForeignKey('stores.id'), ondelete='CASCADE', nullable=False)
+        store_id = Column(String(60), ForeignKey('stores.id', ondelete='CASCADE'),
+                          nullable=False)
         name = Column(String(128), nullable=False)
         description = Column(String(1024), nullable=False)
         price = Column(Integer, nullable=False, default=0)
