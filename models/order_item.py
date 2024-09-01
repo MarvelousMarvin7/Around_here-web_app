@@ -7,12 +7,14 @@ import sqlalchemy
 from sqlalchemy import Column, ForeignKey, String, Integer, event, Enum
 from sqlalchemy.orm import relationship
 
+
 class OrderItem(BaseModel, Base):
     """Representation of OrderItem """
     if models.storage_t == 'db':
         __tablename__ = 'order_items'
         order_id = Column(String(60), ForeignKey('orders.id'), nullable=False)
-        product_id = Column(String(60), ForeignKey('products.id'), nullable=False)
+        product_id = Column(String(60), ForeignKey('products.id'),
+                             nullable=False)
         quantity = Column(Integer, nullable=False, default=0)
         unit_price = Column(Integer, nullable=False, default=0)
         total_amount = Column(Integer, nullable=False, default=0)
@@ -33,7 +35,9 @@ class OrderItem(BaseModel, Base):
         self.total_amount = self.quantity * self.unit_price
         return self.total_amount
 
-"""Event listener to automatically update order_amount in Order when OrderItem changes"""
+
+"""Event listener to automatically update order_amount
+ in Order when OrderItem changes"""
 @event.listens_for(OrderItem, 'after_insert')
 @event.listens_for(OrderItem, 'after_update')
 @event.listens_for(OrderItem, 'after_delete')
