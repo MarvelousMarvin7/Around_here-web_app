@@ -23,13 +23,11 @@ class Order(BaseModel, Base):
         address = ""
         payment_method = "mobile_money"
         status = "pending"
-    
 
     def calculate_order_amount(self):
         """Calculates the total amount for the entire order."""
         self.order_amount = sum(item.total_amount for item in self.order_items)
         return self.order_amount
-
 
     def __init__(self, *args, **kwargs):
         """initializes Order"""
