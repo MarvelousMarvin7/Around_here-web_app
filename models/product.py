@@ -4,7 +4,7 @@ import models
 from models.base_model import BaseModel, Base
 from os import getenv
 import sqlalchemy
-from sqlalchemy import Column, ForeignKey, String, Integer
+from sqlalchemy import Column, ForeignKey, String, Float
 from sqlalchemy.orm import relationship
 
 
@@ -16,14 +16,14 @@ class Product(BaseModel, Base):
                           nullable=False)
         name = Column(String(128), nullable=False)
         description = Column(String(1024), nullable=False)
-        price = Column(Integer, nullable=False, default=0)
+        price = Column(Float, nullable=False, default=0.00)
         reviews = relationship("Review", backref="product")
         order_items = relationship("OrderItem", backref="product", cascade="all, delete")
     else:
         store_id = ""
         name = ""
         description = ""
-        price = 0
+        price = 0.00
 
     def __init__(self, *args, **kwargs):
         """initializes Product"""

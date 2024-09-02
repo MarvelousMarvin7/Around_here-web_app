@@ -17,6 +17,7 @@ class Store(BaseModel, Base):
         image_url = Column(String(128), nullable=True)
         contact = Column(String(12), nullable=False)
         opening_time = Column(Time, nullable=False, default="00:00")
+        closing_time = Column(Time, nullable=False, default="23:59")
         reviews = relationship("Review", backref="store")
         products = relationship("Product", backref="store",
                                 cascade="all, delete")
@@ -28,6 +29,7 @@ class Store(BaseModel, Base):
         image_url = ""
         contact = ""
         opening_time = "00:00"
+        closing_time = "23:59"
 
     def __init__(self, *args, **kwargs):
         """initializes Store"""
