@@ -16,7 +16,11 @@ class Order(BaseModel, Base):
         address = Column(String(128), nullable=False)
         payment_method = Column(Enum('cash', 'mobile_money'), nullable=False)
         status = Column(Enum('pending', 'processing', 'shipped', 'delivered',
+<<<<<<< HEAD
                              'cancelled'), nullable=False, default='pending')
+=======
+                              'cancelled'), nullable=False, default='pending')
+>>>>>>> be07bb9d4fc8874406078dc178818167c41bc5c2
         order_items = relationship("OrderItem", backref="order")
     else:
         user_id = ""
@@ -24,6 +28,14 @@ class Order(BaseModel, Base):
         payment_method = "mobile_money"
         status = "pending"
 
+<<<<<<< HEAD
+=======
+    def calculate_order_amount(self):
+        """Calculates the total amount for the entire order."""
+        self.order_amount = sum(item.total_amount for item in self.order_items)
+        return self.order_amount
+
+>>>>>>> be07bb9d4fc8874406078dc178818167c41bc5c2
     def __init__(self, *args, **kwargs):
         """initializes Order"""
         super().__init__(*args, **kwargs)
