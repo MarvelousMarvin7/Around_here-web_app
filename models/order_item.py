@@ -7,6 +7,7 @@ import sqlalchemy
 from sqlalchemy import Column, ForeignKey, String, Integer, event, Enum
 from sqlalchemy.orm import relationship
 
+
 class OrderItem(BaseModel, Base):
     """Representation of OrderItem """
     if models.storage_t == 'db':
@@ -23,17 +24,19 @@ class OrderItem(BaseModel, Base):
         unit_price = ""
         total_amount = ""
 
-    def __init__(self, *args, **kwargs):
-        """initializes OrderItem"""
-        super().__init__(*args, **kwargs)
-        self.get_total_amount()
-
-    def get_total_amount(self):
+    def calculate_total_amount(self):
         """calculates total amount"""
         self.total_amount = self.quantity * self.unit_price
         return self.total_amount
 
-"""Event listener to automatically update order_amount in Order when OrderItem changes"""
+    def __init__(self, *args, **kwargs):
+        """initializes OrderItem"""
+        super().__init__(*args, **kwargs)
+        self.calculate_total_amount()
+
+
+"""Event listener to automatically update order_amount
+ in Order when OrderItem changes"""
 @event.listens_for(OrderItem, 'after_insert')
 @event.listens_for(OrderItem, 'after_update')
 @event.listens_for(OrderItem, 'after_delete')
@@ -42,4 +45,4 @@ def update_order_amount(mapper, connection, target):
     order = target.order
     if order is not None:
         order.calculate_order_amount()
-        models.storage.save(order)
+        models.storage.save()
