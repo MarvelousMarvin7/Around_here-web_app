@@ -23,6 +23,8 @@ class Store(BaseModel, Base):
         reviews = relationship("Review", backref="store")
         products = relationship("Product", backref="store",
                                 cascade="all, delete")
+        services = relationship("Service", backref="store",
+                                cascade="all, delete")
     else:
         user_id = ""
         name = ""
