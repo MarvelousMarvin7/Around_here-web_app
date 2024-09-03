@@ -10,11 +10,13 @@ from models.order_item import OrderItem
 from models.product import Product
 from models.review import Review
 from models.store import Store
+from models.service import Service
 from models.user import User
 
 
 classes = {'BaseModel': BaseModel, 'User': User, 'Store': Store,
-'Order': Order, 'OrderItem': OrderItem, 'Product': Product, 'Review': Review}
+            'Service': Service, 'Order': Order, 'OrderItem': OrderItem,
+              'Product': Product, 'Review': Review}
 
 
 class FileStorage:

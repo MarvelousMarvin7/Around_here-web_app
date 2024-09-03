@@ -2,7 +2,7 @@
 """holds class Store"""
 import models
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, String, Time, ForeignKey
+from sqlalchemy import Column, Float, String, Time, ForeignKey
 from sqlalchemy.orm import relationship
 
 
@@ -13,6 +13,8 @@ class Store(BaseModel, Base):
         user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
         name = Column(String(128), nullable=False)
         location = Column(String(128), nullable=False)
+        latitude = Column(Float, nullable=True)
+        longitude = Column(Float, nullable=True)
         description = Column(String(1024), nullable=True)
         image_url = Column(String(128), nullable=True)
         contact = Column(String(12), nullable=False)
@@ -25,6 +27,8 @@ class Store(BaseModel, Base):
         user_id = ""
         name = ""
         location = ""
+        latitude = 0.0
+        longitude = 0.0
         description = ""
         image_url = ""
         contact = ""
