@@ -4,6 +4,7 @@ from sqlite3 import Cursor
 import models
 from models.base_model import BaseModel, Base
 from os import getenv
+from models.product import Product
 import sqlalchemy
 from sqlalchemy import Column, ForeignKey, Float, String, Integer, event, Enum, text
 from sqlalchemy.orm import relationship
@@ -35,7 +36,7 @@ class OrderItem(BaseModel, Base):
         """initializes OrderItem"""
         super().__init__(*args, **kwargs)
         """set the unit price"""
-        if self.product_id:
-            product_id = models.storage.get(Cursor.execute(text("Product")), product_id)
-            self.unit_price = product_id.price           
+        product = models.storage.get(Product, self.product_id)
+        if product:
+            self.unit_price = product.price
         self.calculate_total_amount()
