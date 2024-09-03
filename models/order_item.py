@@ -3,6 +3,7 @@
 import models
 from models.base_model import BaseModel, Base
 from os import getenv
+from models.product import Product
 import sqlalchemy
 from sqlalchemy import Column, ForeignKey, Float, String, Integer, event, Enum
 from sqlalchemy.orm import relationship
@@ -32,4 +33,8 @@ class OrderItem(BaseModel, Base):
     def __init__(self, *args, **kwargs):
         """initializes OrderItem"""
         super().__init__(*args, **kwargs)
+        """set the unit price"""
+        product = models.storage.get(Product, self.product_id)
+        if product:
+            self.unit_price = product.price
         self.calculate_total_amount()
