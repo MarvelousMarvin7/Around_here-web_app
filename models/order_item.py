@@ -1,10 +1,11 @@
 #!/usr/bin/python
 """ holds class OrderItem"""
+from sqlite3 import Cursor
 import models
 from models.base_model import BaseModel, Base
 from os import getenv
 import sqlalchemy
-from sqlalchemy import Column, ForeignKey, Float, String, Integer, event, Enum
+from sqlalchemy import Column, ForeignKey, Float, String, Integer, event, Enum, text
 from sqlalchemy.orm import relationship
 
 class OrderItem(BaseModel, Base):
@@ -17,7 +18,7 @@ class OrderItem(BaseModel, Base):
         quantity = Column(Integer, nullable=False, default=0)
         unit_price = Column(Float, nullable=False, default=0.00)
         total_amount = Column(Float, nullable=False, default=0.00)
-        product = relationship("Product", backref="order_items")
+
     else:
         order_id = ""
         product_id = ""
@@ -35,6 +36,6 @@ class OrderItem(BaseModel, Base):
         super().__init__(*args, **kwargs)
         """set the unit price"""
         if self.product_id:
-            product_id = models.storage.get("Product", product_id)
+            product_id = models.storage.get(Cursor.execute(text("Product")), product_id)
             self.unit_price = product_id.price           
         self.calculate_total_amount()
