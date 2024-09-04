@@ -9,8 +9,10 @@ class ServiceRequest(BaseModel, Base):
     """Representation of ServiceRequest """
     if models.storage_t == 'db':
         __tablename__ = 'service_requests'
-        service_id = Column(String(60), ForeignKey('service.id'), nullable=False)
+        service_id = Column(String(60), ForeignKey('services.id'),
+                            nullable=False)
         user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
+        address = Column(String(128), nullable=True)
         schedule_time = Column(DateTime, nullable=False)
         status = Column(Enum('pending', 'confirmed', 'completed',
                               'cancelled'), nullable=False, default='pending')

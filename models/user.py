@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ holds class User"""
-import bcrypt # type: ignore
+import bcrypt
 import models
 from models.base_model import BaseModel, Base
 from sqlalchemy import BOOLEAN, Column, String
@@ -35,8 +35,8 @@ class User(BaseModel, Base):
     def hash_password(self, password):
         """hashes password"""
         return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
-    
+
     def is_valid_password(self, password):
         """checks if password is valid"""
         return bcrypt.checkpw(password.encode('utf-8'), self.password.encode('utf-8'))
-    
+
