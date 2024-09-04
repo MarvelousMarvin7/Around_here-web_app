@@ -6,6 +6,8 @@ from models.base_model import BaseModel
 from models.__init__ import storage
 from models.user import User
 from models.store import Store
+from models.service import Service
+from models.service_request import ServiceRequest
 from models.order import Order
 from models.product import Product
 from models.order_item import OrderItem
@@ -19,16 +21,11 @@ class AHCommand(cmd.Cmd):
     prompt = '(Arh) ' if sys.__stdin__.isatty() else ''
 
     classes = {
-               'BaseModel': BaseModel, 'User': User, 'Store': Store,
-               'Order': Order, 'OrderItem': OrderItem, 'Product': Product,
-               'Review': Review
+               'BaseModel': BaseModel, 'User': User, 'Store': Store, 'Service': Service,
+                'ServiceRequest': ServiceRequest,'Order': Order, 'OrderItem': OrderItem,
+                  'Product': Product, 'Review': Review
               }
     dot_cmds = ['all', 'count', 'show', 'destroy', 'update']
-    types = {
-             'number_rooms': int, 'number_bathrooms': int,
-             'max_guest': int, 'price_by_night': int,
-             'latitude': float, 'longitude': float
-            }
 
     def preloop(self):
         """Prints if isatty is false"""

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ holds class User"""
-import bcrypt
+import bcrypt # type: ignore
 import models
 from models.base_model import BaseModel, Base
 from sqlalchemy import BOOLEAN, Column, String
