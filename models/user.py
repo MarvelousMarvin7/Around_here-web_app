@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """ holds class User"""
+import bcrypt
 import models
 from models.base_model import BaseModel, Base
-from os import getenv
-import sqlalchemy
 from sqlalchemy import BOOLEAN, Column, String
 from sqlalchemy.orm import relationship
 
@@ -29,4 +28,15 @@ class User(BaseModel, Base):
 
     def __init__(self, *args, **kwargs):
         """initializes user"""
+        if 'password' in kwargs:
+            kwargs['password'] = self.hash_password(kwargs['password'])
         super().__init__(*args, **kwargs)
+
+    def hash_password(self, password):
+        """hashes password"""
+        return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+    
+    def is_valid_password(self, password):
+        """checks if password is valid"""
+        return bcrypt.checkpw(password.encode('utf-8'), self.password.encode('utf-8'))
+    

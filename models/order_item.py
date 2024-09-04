@@ -2,11 +2,9 @@
 """ holds class OrderItem"""
 import models
 from models.base_model import BaseModel, Base
-from os import getenv
 from models.product import Product
-import sqlalchemy
-from sqlalchemy import Column, ForeignKey, Float, String, Integer, event, Enum
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, ForeignKey, Float, String, Integer
+
 
 class OrderItem(BaseModel, Base):
     """Representation of OrderItem """

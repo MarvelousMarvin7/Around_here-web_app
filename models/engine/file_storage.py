@@ -9,13 +9,14 @@ from models.order import Order
 from models.order_item import OrderItem
 from models.product import Product
 from models.review import Review
+from models.service_request import ServiceRequest
 from models.store import Store
 from models.service import Service
 from models.user import User
 
 
-classes = {'BaseModel': BaseModel, 'User': User, 'Store': Store,
-            'Service': Service, 'Order': Order, 'OrderItem': OrderItem,
+classes = {'BaseModel': BaseModel, 'User': User, 'Store': Store, 'Service': Service,
+            'ServiceRequest': ServiceRequest, 'Order': Order, 'OrderItem': OrderItem,
               'Product': Product, 'Review': Review}
 
 

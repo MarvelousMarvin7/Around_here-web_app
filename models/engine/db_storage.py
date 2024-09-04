@@ -3,8 +3,8 @@
 Contains the class DBStorage
 """
 
-import models
 from models.base_model import Base, BaseModel
+from models.service_request import ServiceRequest
 from models.user import User
 from models.store import Store
 from models.service import Service
@@ -13,12 +13,14 @@ from models.product import Product
 from models.order_item import OrderItem
 from models.review import Review
 from os import getenv
-import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
+
 classes = {'BaseModel': BaseModel, 'User': User, 'Store': Store, 'Service': Service,
-            'Order': Order, 'OrderItem': OrderItem, 'Product': Product, 'Review': Review}
+            'ServiceRequest': ServiceRequest, 'Order': Order, 'OrderItem': OrderItem,
+              'Product': Product, 'Review': Review}
+
 
 class DBStorage:
     """interacts with the MySQL database"""

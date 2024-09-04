@@ -16,13 +16,14 @@ class Service(BaseModel, Base):
         description = Column(String(1024), nullable=False)
         service_price = Column(Float, nullable=False, default=0.00)
         image_url = Column(String(128), nullable=True)
+        service_requests = relationship("ServiceRequest", backref="service")
         reviews = relationship("Review", backref="service")
     else:
         store_id = ""
         name = ""
-        image_url = ""
         description = ""
-        price = 0.00
+        service_price = 0.00
+        image_url = ""
 
     def __init__(self, *args, **kwargs):
         """initializes Service"""

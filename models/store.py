@@ -2,7 +2,7 @@
 """holds class Store"""
 import models
 from models.base_model import BaseModel, Base
-from sqlalchemy import Column, Float, String, Time, ForeignKey
+from sqlalchemy import Column, Enum, Float, String, Time, ForeignKey
 from sqlalchemy.orm import relationship
 
 
@@ -12,6 +12,8 @@ class Store(BaseModel, Base):
         __tablename__ = 'stores'
         user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
         name = Column(String(128), nullable=False)
+        category = Column(Enum('Grocery', 'Pharmacy', 'Restaurant', 'Other'),
+                           nullable=False, default='Grocery')
         location = Column(String(128), nullable=False)
         latitude = Column(Float, nullable=True)
         longitude = Column(Float, nullable=True)
@@ -28,6 +30,7 @@ class Store(BaseModel, Base):
     else:
         user_id = ""
         name = ""
+        category = "Grocery"
         location = ""
         latitude = 0.0
         longitude = 0.0
