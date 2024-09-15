@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """holds class Store"""
 import models
 from models.base_model import BaseModel, Base
@@ -12,7 +12,7 @@ class Store(BaseModel, Base):
         __tablename__ = 'stores'
         user_id = Column(String(60), ForeignKey('users.id'), nullable=False)
         name = Column(String(128), nullable=False)
-        category = Column(Enum('Grocery', 'Pharmacy', 'Restaurant', 'Other'),
+        category = Column(Enum('Grocery', 'Pharmacy', 'Electricals', 'Restaurant', 'Other'),
                            nullable=False, default='Grocery')
         location = Column(String(128), nullable=False)
         latitude = Column(Float, nullable=True)
