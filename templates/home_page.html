@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>stores</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="shortcut icon" href="./images/AH.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header class="border w-full bg-white border-b-white sticky top-0">
+            <div>
+                <img src="./images/header_logo-01.png" alt="logo" class="w-60 -mb-48 -mt-14 h-80 pb-5 -ml-7">
+            </div>
+            <div>
+                <button class="float-end -mt-12 mr-5 bg-lime-500 hover:bg-gray-700 text-white font-semibold py-1 px-2 rounded-xl focus:outline-none focus:shadow-outline"> <a href="login.html">Sign in</a></button>
+            </div>
+            <nav class="flex justify-center text-gray-400 font-bold text-pretty pl-2 pt-3 -mt-20 pb-5">
+                <ul class="flex">
+                    <!--Navigation links-->
+                    <li class="mr-3 inline-block bg-gray-100 border border-b-2 border-b-lime-600 text-black py-2 px-4 rounded-t-lg max-auto">
+                        <a href="home_page.html">Home</a>
+                    </li>
+                    <li class="mr-3 py-2 px-4"><a href="services_page.html">Services</a></li>
+                    <li class="mr-3 py-2 px-4"><a href="products.html">Products</a></li>
+                    <li class="mr-3 py-2 px-4"><a href="About.html">About</a></li>
+                </ul>
+            </nav>
+            <!--Search box-->
+            <div class="flex justify-center -mt-2 -ml-3 pb-5 pt-5">
+                <input type="text" name="search" id="search" placeholder="Search for products..." class="border italic focus:outline-none bg-gray-100 placeholder-lime-300 border-lime-600 rounded-l-xl w-5/6 py-2 px-3 text-lime-600 leading-tight p-10 transition-transform">
+                <button class="bg-white border border-lime-600 text-lg text-lime-600 pt-2 pl-2 pr-2 -mr-3 rounded-r-xl">
+                    <i class="material-icons ">search</i>
+                </button>
+            </div>
+        </header>
+        <section>
+            <article>
+                <div class="text-white bg-green-600 p-5">
+                    <h1 class="text-center mt-2 text-4xl font-bold">Welcome to our store section</h1>
+                    <p class="text-center">We have the best stores ready for your orders and service requests</p>
+                </div>
+            </article>
+            <article class="bg-green-50">
+                <!--Stores on the page in a container with details of store
+                    The store name, location, contact details, and clicking the
+                    store makes it possible to view the store
+                -->
+                <div class="flex justify-center">
+                    <div class="boxes flex flex-wrap justify-center">
+                        <a href="/store/id" class="bg-white border-2 shadow-gray-400 shadow-lg border-lime-600 rounded-lg m-5">
+                            <div class="flex-none w-full">
+                                <img src="./images/phone_shop.jpeg" alt="Image 1" class="w-96 p-5 h-80 border rounded-lg">
+                                <p class="text-left bg-green-600 w-1/3 border rounded-lg text-white mt-2 ml-2 pl font-semibold">Store name
+                                    <i class="material-icons text-4xl pr-1 float-left">store</i>
+                                </p>
+                                <p class="text-left pl-3 text-black uppercase">Columbia phone shop</p>
+                                <p class="text-left bg-green-600 w-1/3 border rounded-lg text-white mt-2 ml-2 font-semibold">Location
+                                    <i class="material-icons text-4xl pr-1 float-left">location_on</i>
+                                </p>
+                                <p class="text-left pl-3 text-black uppercase">Circle</p>
+                                <p class="text-left bg-green-600 w-1/3 border rounded-lg text-white mt-2 ml-2 font-semibold">Contact
+                                    <i class="material-icons text-4xl pr-1 float-left">local_phone</i>
+                                </p>
+                                <p class="text-left pl-3 text-black uppercase">0233444444</p>
+                            </div>
+                        </a>
+                        <a href="/store/id" class="bg-white border-2 shadow-gray-400 shadow-lg border-lime-600 rounded-lg m-5">
+                            <div class="flex-none w-full">
+                                <img src="./images/ped.jpeg" alt="Image 1" class="w-96 p-5 h-80 border rounded-lg">
+                                <p class="text-left bg-green-600 w-1/3 border rounded-lg text-white mt-2 ml-2 pl font-semibold">Store name
+                                    <i class="material-icons text-4xl pr-1 float-left">store</i>
+                                </p>
+                                <p class="text-left pl-3 text-black uppercase">Ella medics and pedics</p>
+                                <p class="text-left bg-green-600 w-1/3 border rounded-lg text-white mt-2 ml-2 font-semibold">Location
+                                    <i class="material-icons text-4xl pr-1 float-left">location_on</i>
+                                </p>
+                                <p class="text-left pl-3 text-black uppercase">Achimota, larbi-street</p>
+                                <p class="text-left bg-green-600 w-1/3 border rounded-lg text-white mt-2 ml-2 font-semibold">Contact
+                                    <i class="material-icons text-4xl pr-1 float-left">local_phone</i>
+                                </p>
+                                <p class="text-left pl-3 text-black uppercase">0245665666</p>
+                            </div>
+                        </a>
+                       
+                    </div>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>

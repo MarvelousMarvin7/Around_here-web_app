@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>stores</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="shortcut icon" href="./images/AH.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header class="border w-full bg-white border-b-white sticky top-0">
+            <div>
+                <img src="./images/header_logo-01.png" alt="logo" class="w-60 -mb-48 -mt-14 h-80 pb-5 -ml-7">
+            </div>
+            <div>
+                <button class="float-end -mt-12 mr-5 bg-lime-500 hover:bg-gray-700 text-white font-semibold py-1 px-2 rounded-xl focus:outline-none focus:shadow-outline"> <a href="login.html">Sign in</a></button>
+            </div>
+            <nav class="flex justify-center text-black font-bold text-pretty pl-2 pt-1 -mt-20 pb-3">
+                <ul class="flex">
+                    <!--Navigation links-->
+                    <li class="mr-3 py-2 px-4"><a href="home_page.html">Home</a></li>
+                    <li class="mr-3 py-2 px-4">
+                        <a href="services_page.html">Services</a>
+                    </li>
+                    <li class="mr-3 py-2 px-4"><a href="products.html">Products</a></li>
+                    <li class="mr-3 py-2 px-4"><a href="About.html">About</a></li>
+                </ul>
+            </nav>
+            <!--Search box-->
+            <div class="flex justify-center -mt-2 -ml-3 pb-5 pt-5">
+                <input type="text" name="search" id="search" placeholder="Search for products..." class="border italic focus:outline-none bg-gray-100 placeholder-lime-300 border-lime-600 rounded-l-xl w-5/6 py-2 px-3 text-lime-600 leading-tight p-10 transition-transform">
+                <button class="bg-white border border-lime-600 text-lg text-lime-600 pt-2 pl-2 pr-2 -mr-3 rounded-r-xl">
+                    <i class="material-icons ">search</i>
+                </button>
+            </div>
+        </header>
+        <main class="container mx-auto mt-5 p-6 bg-gray-50 rounded-lg shadow-black shadow-lg">
+            <section class="flex justify-between items-center mb-6">
+                <div>
+                    <h1 class="text-3xl font-bold text-green-800">Columbia Phone shop
+                        <i class="material-icons text-4xl">store</i>
+                    </h1>
+                    <p class="text-lime-800">Phone: +233 244 000 000</p>
+                    <p class="text-lime-800">Location: Accra, Ghana</p>
+                    <p class="text-lime-800">opening time: 6:00am</p>
+                    <p class="text-lime-800">closing time: 8:00pm</p>
+                </div>
+            </section>
+            <!--Store description section-->
+            <section class="mb-6">
+                <h2 class="text-lg font-semibold text-green-800 mb-4">About Us</h2>
+                <p class="text-gray-600 -mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </section>
+            <!-- Product Section -->
+            <section class="ml-2 mr-2">
+                <article class="my-4 px-2 pt-2 pb-1">
+                    <h2 class="p-2 text-green-700 text-center text-xl font-bold mb-4">Products</h2>       
+                    <!-- Scrollable image section -->
+                    <div class="flex space-x-4 overflow-x-scroll no-scrollbar">
+                        <div class="flex-none w-48">
+                            <img src="./images/A05.jpeg" alt="Image 1" class="w-full h-52 cursor-pointer rounded-md py-1" onclick="showOrderModal()">
+                            <p class="text-center mt-2 font-semibold">Samsung A05</p>
+                            <p class="text-center text-gray-600">GH₵ 2,210.00</p>
+                        </div>                        
+                    </div>
+                </article>
+            </section>
+            <!--Services section-->
+            <section class="ml-2 mr-2">
+                <article class="my-4 px-2 pt-2 pb-3">
+                    <h2 class="p-2 text-green-700 text-center text-xl font-bold mb-4">Services</h2>
+                    <div class="flex space-x-4 overflow-x-scroll no-scrollbar">
+                        <div class="flex-none w-64 bg-white border p-4 rounded shadow-lg h-full">
+                            <img src="./images/nails.jpeg" alt="Service Image" class="w-full h-40 object-cover cursor-pointer rounded" onclick="showServiceRequestModal()">
+                            <h3 class="mt-4 font-semibold text-lg">Phone Repair</h3>
+                            <p class="text-gray-600 mt-2">Starting from GH₵ 100.00</p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section class="ml-2 mr-2 mt-8">
+                <article class="my-4 px-2 pt-2 pb-3">
+                    <h2 class="p-2 text-green-700 text-center text-xl font-bold mb-4">Orders</h2>
+                    
+                    <!-- Order List -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md mb-6">
+                        <!-- Example Order 1 -->
+                        <div class="bg-white p-4 rounded-lg shadow mb-4">
+                            <h3 class="text-lg font-semibold text-gray-700 mb-2">Order #12345</h3>
+                            <p class="text-gray-600 mb-2">Product: Samsung A05</p>
+                            <p class="text-gray-600 mb-2">Quantity: 2</p>
+                            <p class="text-gray-600 mb-2">Total: GH₵ 4,420.00</p>
+                            <p class="text-gray-600 mb-4">Status: 
+                                <!-- Status Dropdown -->
+                                <select class="border border-gray-300 p-2 rounded-lg" onchange="updateOrderStatus(this.value, '12345')">
+                                    <option value="pending">Pending</option>
+                                    <option value="processing">Processing</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </p>
+                            <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700" onclick="updateOrderStatus('delivered', '12345')">Update Status</button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section class="ml-2 mr-2 mt-8"></section>
+                <article class="my-4 px-2 pt-2 pb-3">
+                    <h2 class="p-2 text-green-700 text-center text-xl font-bold mb-4">Requests</h2>       
+                    <!-- Request List -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md mb-6">
+                        <!-- Example Of Requests -->
+                        <div class="bg-white p-4 rounded-lg shadow mb-4">
+                            <h3 class="text-lg font-semibold text-gray-700 mb-2">Service Request #12345</h3>
+                            <p class="text-gray-600 mb-2">Service: Pedicure</p>
+                            <p class="text-gray-600 mb-2">Price: 2</p>
+                            <p class="text-gray-600 mb-2">Date: {{}}</p>
+                            <p class="text-gray-600 mb-4">Status: 
+                                <!-- Status Dropdown -->
+                                <select class="border border-gray-300 p-2 rounded-lg" onchange="updateServiceRequestStatus(this.value, '12345')">
+                                    <option value="pending">Pending</option>
+                                    <option value="confirmed">Confirmed</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </p>
+                            <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700" onclick="updateServiceRequestStatus('completed', '12345')">Update Status</button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <section class="mt-10">
+                <h2 class="text-lg font-semibold text-green-800 mb-4">User Reviews & Comments</h2>    
+                <!-- User Comment Form -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md mb-6">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Leave a Review</h3>
+                    <form>
+                        <div class="mb-4">
+                            <textarea class="w-full p-4 border border-gray-300 rounded-lg focus:ring focus:ring-green-200" rows="4" placeholder="Write your review..."></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-semibold mb-2">Rating</label>
+                            <select class="w-full p-2 border border-gray-300 rounded-lg">
+                                <option value="5">5 - Excellent</option>
+                                <option value="4">4 - Very Good</option>
+                                <option value="3">3 - Good</option>
+                                <option value="2">2 - Fair</option>
+                                <option value="1">1 - Poor</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-700">Submit Review</button>
+                    </form>
+                </div>
+    
+                <!-- Display User Reviews -->
+                <div>
+                    <!-- Example Review 1 -->
+                    <div class="bg-white p-4 rounded-lg shadow mb-4">
+                        <p class="text-gray-600 mb-2">"Great product! The quality was top-notch and the service was prompt."</p>
+                        <p class="text-sm text-gray-500">Rating: ⭐⭐⭐⭐⭐</p>
+                        <p class="text-sm text-gray-400">Reviewed by: John Doe</p>
+                    </div>
+                </div>
+            </section>
+            <div id="serviceModal" class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
+                <div class="bg-white p-5 rounded shadow-lg">
+                    <p>Do you want to request for a service?</p>
+                    <div class="flex justify-end space-x-3 mt-4">
+                        <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="closeServiceRequestModal()">No</button>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded" onclick="redirectToServiceRequest()">Yes</button>
+                    </div>
+                </div>
+            </div>
+            <div id="orderModal" class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
+                <div class="bg-white p-5 rounded shadow-lg">
+                    <p>Do you want to place an order?</p>
+                    <div class="flex justify-end space-x-3 mt-4">
+                        <button class="bg-gray-700 text-white px-4 py-2 rounded" onclick="closeModal()">No</button>
+                        <button class="bg-green-500 text-white px-4 py-2 rounded" onclick="redirectToOrder()">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="/static/js/order.js"></script>
+        <script src="/static/js/service.js"></script>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="shortcut icon" href="./images/AH.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+    <body>
+        <header class="border bg-white border-b-white sticky w-full max-w-full top-0">
+            <div>
+                <img src="./images/header_logo-01.png" alt="logo" class="w-60 -mb-48 -mt-14 h-80 pb-5 -ml-7">
+            </div>
+            <div>
+                <button class="float-end -mt-12 mr-5 bg-lime-500 hover:bg-gray-700 text-white font-semibold py-1 px-2 rounded-xl focus:outline-none focus:shadow-outline"> <a href="login.html">Sign in</a></button>
+            </div>
+            <nav class="flex justify-center text-gray-400 font-bold text-pretty pl-2 pt-3 -mt-20 pb-5">
+                <ul class="flex">
+                    <!--Navigation links-->
+                    <li class="mr-3 py-2 px-4"><a href="home_page.html">Home</a></li>
+                    <li class="mr-3 py-2 px-4"><a href="services_page.html">Services</a></li>
+                    <li class="mr-3 inline-block bg-gray-100 border border-b-2 border-b-lime-600 text-black py-2 px-4 rounded-t-lg max-auto">
+                        <a href="products.html">Products</a>
+                    </li>
+                    <li class="mr-3 py-2 px-4"><a href="About.html">About</a></li>
+                </ul>
+            </nav>
+            <!--Search box-->
+            <div class="flex justify-center -mt-2 -ml-3 pb-5 pt-5">
+                <input type="text" name="search" id="search" placeholder="Search for products..." class="border italic focus:outline-none focus:border-green-600 bg-gray-100 placeholder-lime-300 border-lime-600 rounded-l-xl w-5/6 py-2 px-3 text-lime-600 leading-tight p-10 transition-transform">
+                <button class="bg-white border border-lime-600 text-lg text-lime-600 pt-2 pl-2 pr-2 -mr-3 rounded-r-xl">
+                    <i class="material-icons ">search</i>
+                </button>
+            </div>
+       </header>
+       <section class="ml-2 mr-2">
+            <article class="my-4 px-2 pt-2 pb-1 border-lime-600 border-y-2">
+                <div class="bg-green-600 rounded-md">
+                    <h2 class="p-2 text-white font-bold mb-4">Columbia phone shop
+                        <i class="material-icons text-4xl float-right">store</i>
+                        <i class="material-icons text-4xl float-right">local_phone</i>
+                        <i class="material-icons text-4xl float-right">location_on</i>
+                    </h2>
+                </div>        
+                <!-- Scrollable image section -->
+                <div class="flex space-x-4 overflow-x-scroll no-scrollbar">
+                    <!-- Image 1 -->
+                    <a href="/store/id" class="flex-none w-48">
+                        <img src="./images/A05.jpeg" alt="Image 1" class="w-full h-52 rounded-md border py-1 border-lime-500">
+                        <p class="text-center mt-2 font-semibold">Samsung A05</p>
+                        <p class="text-center text-gray-600">GH₵ 2,210.00</p>
+                    </a>
+                    
+                </div>
+            </article>
+            <article class="my-4 px-2 pt-2 pb-1 border-lime-600 border-y-2">
+                <div class="bg-green-600 rounded-md">
+                    <h2 class="p-2 text-white font-bold mb-4">Ella pedics and manics
+                        <i class="material-icons text-4xl float-right">store</i>
+                        <i class="material-icons text-4xl float-right">local_phone</i>
+                        <i class="material-icons text-4xl float-right">location_on</i>
+                    </h2>
+                </div> 
+                <!-- Scrollable image section -->
+                <div class="flex space-x-4 overflow-x-scroll no-scrollbar">
+                    <!-- Image 1 -->
+                    <a href="/store/id" class="flex-none w-48">
+                        <img src="./images/lashes.jpeg" alt="Image 1" class="w-full h-52 rounded-md border py-1 border-lime-500">
+                        <p class="text-center mt-2 font-semibold">Eye lash</p>
+                        <p class="text-center text-gray-600">GH₵ 30.00</p>
+                    </a>
+                </div>
+        </section>
+    
+    </body>
+</html>

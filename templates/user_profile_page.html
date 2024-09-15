@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+        <header class="bg-white shadow border-b-lime-500 border-b">
+            <div class="container mx-auto p-6">
+                <div class="flex items-center space-x-4">
+                    <!-- Profile Image Placeholder -->
+                    <div class="w-24 h-24 rounded-full bg-gray-300 border-2 border-lime-600 overflow-hidden">
+                        <img src="https://via.placeholder.com/100" alt="Profile Image" class="object-cover w-full h-full">
+                    </div>
+                    <!-- User Info -->
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-800">Username</h1>
+                        <p class="text-gray-600">Email: user@example.com</p>
+                        <p class="text-gray-600">Location: Accra, Ghana</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="container mx-auto mt-10">
+            <!-- Orders Section -->
+            <section class="bg-white p-6 rounded-lg shadow-lg mb-10">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">My Orders</h2>
+                <p class="text-gray-600">You have not placed any orders yet.</p>
+            </section>
+
+            <section class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4">Stores Owned</h2>
+        
+                <!-- Button to create a store -->
+                <button class="bg-green-500 text-white px-4 py-2 rounded-lg mb-4 hover:bg-green-700" onclick="goToStoreCreationPage()">
+                    Create Store
+                </button>
+        
+                <!-- List of stores -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Example store card -->
+                    <div class="bg-white p-4 shadow rounded-lg">
+                        <h3 class="text-lg font-bold mb-2">Store Name</h3>
+                        <p class="text-gray-600">Description of the store</p>
+                        <button class="bg-lime-500 text-white px-4 py-2 mt-4 rounded-lg hover:bg-gray-700" onclick="openStoreModal()">
+                            Manage Store
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Store modal -->
+        <div id="storeModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex hidden items-center justify-center">
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
+                <h2 class="text-xl font-semibold mb-4">What would you like to do?</h2>
+                <button class="bg-green-500 text-white px-4 py-2 rounded-lg w-full mb-4 hover:bg-green-700" onclick="goToProductCreationPage()">
+                    Create Product
+                </button>
+                <button class="bg-green-500 text-white px-4 py-2 rounded-lg w-full mb-4 hover:bg-green-700" onclick="goToServiceCreationPage()">
+                    Create Service
+                </button>
+                <button class="bg-gray-700 text-white px-4 py-2 rounded-lg w-full hover:bg-green-700" onclick="goToStorePage()">
+                    View Store
+                </button>
+                <button class="mt-4 text-red-600" onclick="closeStoreModal()">Cancel</button>
+            </div>
+        </div> 
+        </main>
+        <footer>
+        </footer>
+        <script src="/static/js/user_profile.js"></script>
+    </body>
+</html>

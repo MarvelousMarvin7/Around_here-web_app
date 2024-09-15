@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="shortcut icon" href="./images/AH.png">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!--creating account-->
+    <header class="flex items-center justify-center border bg-white border-b-lime-400 sticky top-0">
+        <div>
+            <img src="./images/header-logo.png" alt="logo" class="w-32 py-3 pl-1">
+        </div>
+    </header>
+    <main class="container mx-auto mt-5 p-10 bg-lime-50 rounded-lg shadow-slate-600 shadow-lg">
+        <article class="mt-5">
+            <h3 class="text-2xl">Create store</h3>
+            <p class="text-red-600 pt-5 text-sm italic -mb-4">All red star fields are compulsory</p> 
+            <div>
+                <form action="/create_store" method="POST" class="pt-10">
+                    <div class="mb-4">
+                        <label for="name" class="block text-green-700 text-sm font-bold mb-2 float-left">Store name<span class="text-red-600 pl-1">*</span></label>
+                        <input type="text" name="name" id="name" placeholder="Enter your store name" class="shadow appearance-none border rounded w-full py-2 px-3 text-slate-900 leading-tight focus:outline-none focus:border-green-600 focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="location" class="block text-green-700 text-sm font-bold mb-2 float-left">Location<span class="text-red-600 pl-1">*</span></label>
+                        <input type="text" name="location" id="location" placeholder="Enter location" class="shadow appearance-none border rounded w-full py-2 px-3 text-slate-900 leading-tight focus:outline-none focus:border-green-600 focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4"></div>
+                        <label for="latitude" class="block text-green-700 text-sm font-bold mb-2 float-left">Latitute</label>
+                        <input type="text" name="latitude" id="latitude" placeholder="Enter latitude" class="shadow appearance-none border rounded w-full py-2 px-3 text-slate-900 leading-tight focus:outline-none focus:border-green-600 focus:shadow-outline">
+                    </div>
+                    <div class="mb-4"></div>
+                        <label for="longitude" class="block text-green-700 text-sm font-bold mb-2 float-left">Longitude</label>
+                        <input type="text" name="longitude" id="longitude" placeholder="Enter longitude" class="shadow appearance-none border rounded w-full py-2 px-3 text-slate-900 leading-tight focus:outline-none focus:border-green-600 focus:shadow-outline">
+                    </div>
+                    <div class="mb-4"></div>
+                        <label for="description" class="block text-green-700 text-sm font-bold mb-2 float-left">Description<span class="text-red-600 pl-1">*</span></label>
+                        <input type="description" name="description" id="description" placeholder= "Describe your store" class="shadow appearance-none focus:border-green-600 border rounded w-full py-2 px-3 text-slate-900 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="image_url" class="block text-green-700 text-sm font-bold mb-2 mt-4 float-left">Store Image<span class="text-red-600 pl-1">*</span></label>
+                        <input type="file" name="image_url" id="image_url" accept="image/*" class="shadow appearance-none border rounded w-full py-2 px-3 text-slate-900 leading-tight focus:outline-none focus:border-green-600 focus:shadow-outline" required>
+                    </div>     
+                    <div class="mb-4">
+                        <label for="contact" class="block text-green-700 text-sm font-bold mb-2 float-left">Contact<span class="text-red-600 pl-1">*</span></label>
+                        <input type="text" name="contact" id="contact" placeholder= "Enter your contact" class="shadow appearance-none focus:border-green-600 border rounded w-full py-2 px-3 text-slate-900 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div>
+                        <!-- selection of opening time-->
+                        <label for="opening_time" class="block text-green-700 text-sm font-bold mb-4 float-left pr-2">Opening time<span class="text-red-600 pl-1">*</span></label>
+                        <select name="opening_time" id="opening_time" class="shadow appearance-none border rounded w-full py-2 px-3 text-slate-900 leading-tight focus:outline-none focus:border-green-600 focus:shadow-outline">
+                            <option value="6:00am">6:00am</option>
+                            <option value="7:00am">7:00am</option>
+                            <option value="8:00am">8:00am</option>
+                            <option value="9:00am">9:00am</option>
+                            <option value="10:00am">10:00am</option>
+                            <option value="11:00am">11:00am</option>
+                            <option value="12:00pm">12:00pm</option>
+                            <option value="1:00pm">1:00pm</option>
+                            <option value="2:00pm">2:00pm</option>
+                            <option value="3:00pm">3:00pm</option>
+                            <option value="4:00pm">4:00pm</option>
+                            <option value="5:00pm">5:00pm</option>
+                            <option value="6:00pm">6:00pm</option>
+                            <option value="7:00pm">7:00pm</option>
+                            <option value="8:00pm">8:00pm</option>
+                        </select>
+                    </div>
+                    <div>
+                        <!-- selection of closing time-->
+                        <label for="closing_time" class="block text-green-700 text-sm font-bold mb-4 mt-4 float-left pr-2">Closing time<span class="text-red-600 pl-1">*</span></label>
+                        <select name="closing_time" id="closing_time" class="shadow appearance-none border rounded w-full py-2 px-3 text-slate-900 leading-tight focus:outline-none focus:border-green-600 focus:shadow-outline">
+                            <option value="6:00am">6:00am</option>
+                            <option value="7:00am">7:00am</option>
+                            <option value="8:00am">8:00am</option>
+                            <option value="9:00am">9:00am</option>
+                            <option value="10:00am">10:00am</option>
+                            <option value="11:00am">11:00am</option>
+                            <option value="12:00pm">12:00pm</option>
+                            <option value="1:00pm">1:00pm</option>
+                            <option value="2:00pm">2:00pm</option>
+                            <option value="3:00pm">3:00pm</option>
+                            <option value="4:00pm">4:00pm</option>
+                            <option value="5:00pm">5:00pm</option>
+                            <option value="6:00pm">6:00pm</option>
+                            <option value="7:00pm">7:00pm</option>
+                            <option value="8:00pm">8:00pm</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-60 bg-green-900 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4">Register store</button>
+                    </div>
+                </form>
+            </div>  
+        </article>
+    </main>
+    <footer class="my-10">
+        <p class="text-center text-gray-400 text-sm pt-5">Around Here © 2024 All rights reserved</p>
+    </footer>
+</body>
+</html>
