@@ -18,7 +18,6 @@ class Product(BaseModel, Base):
         description = Column(String(1024), nullable=False)
         price = Column(Float, nullable=False, default=0.00)
         image_url = Column(String(128), nullable=True)
-        reviews = relationship("Review", backref="product")
         order_items = relationship("OrderItem", backref="product", cascade="all, delete")
     else:
         store_id = ""

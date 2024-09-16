@@ -17,7 +17,6 @@ class Service(BaseModel, Base):
         service_price = Column(Float, nullable=False, default=0.00)
         image_url = Column(String(128), nullable=True)
         service_requests = relationship("ServiceRequest", backref="service")
-        reviews = relationship("Review", backref="service")
     else:
         store_id = ""
         name = ""

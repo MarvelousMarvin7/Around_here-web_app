@@ -14,8 +14,8 @@ class User(BaseModel, Base):
         email = Column(String(128), nullable=False)
         password = Column(String(128), nullable=False)
         user_name = Column(String(128), nullable=False)
-        website = Column(String(128), nullable=True)
-        is_store_owner = Column(BOOLEAN, nullable=False, default=False)
+        image_url = Column(String(128), nullable=True)
+        is_store_owner = Column(BOOLEAN, nullable=True, default=False)
         stores = relationship("Store", backref="user")
         orders = relationship("Order", backref="user")
         reviews = relationship("Review", backref="user")
@@ -23,7 +23,7 @@ class User(BaseModel, Base):
         email = ""
         password = ""
         user_name = ""
-        website = ""
+        image_url =""
         is_store_owner = False
 
     def __init__(self, *args, **kwargs):

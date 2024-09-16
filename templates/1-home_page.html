@@ -11,22 +11,31 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-        <header class="border w-full bg-white border-b-white sticky top-0">
+        <header class="border w-full justify-center items-center bg-white border-b-white sticky top-0">
             <div>
                 <img src="/static/images/header_logo-01.png" alt="logo" class="w-60 -mb-48 -mt-14 h-80 pb-5 -ml-7">
             </div>
-            <div>
-                <button class="float-end -mt-12 mr-5 bg-lime-500 hover:bg-gray-700 text-white font-semibold py-1 px-2 rounded-xl focus:outline-none focus:shadow-outline"> <a href="login.html">Sign in</a></button>
+            <div class="relative inline-block text-left float-right -mt-14 mr-7">
+                <div class="w-12 h-12 float-right -mr-3 rounded-full bg-gray-300 border-2 border-lime-600 overflow-hidden cursor-pointer" onclick="toggleDropdown()">
+                    <img src="/static/images/profile-pic.png" alt="Profile Image" class="object-cover w-full h-full">
+                </div>
+                <div id="dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">View Profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Change Profile Picture</a>
+                        <button class="px-4 py-2 text-sm text-red-600 w-full text-left hover:bg-gray-100" role="button" onclick="closeDropdown()">Close</button>
+                    </div>
+                </div>
             </div>
             <nav class="flex justify-center text-gray-400 font-bold text-pretty pl-2 pt-3 -mt-20 pb-5">
                 <ul class="flex">
                     <!--Navigation links-->
                     <li class="mr-3 inline-block bg-gray-100 border border-b-2 border-b-lime-600 text-black py-2 px-4 rounded-t-lg max-auto">
-                        <a href="home_page.html">Home</a>
+                        <a href="1-home_page.html">Home</a>
                     </li>
-                    <li class="mr-3 py-2 px-4"><a href="services_page.html">Services</a></li>
-                    <li class="mr-3 py-2 px-4"><a href="products.html">Products</a></li>
-                    <li class="mr-3 py-2 px-4"><a href="About.html">About</a></li>
+                    <li class="mr-3 py-2 px-4"><a href="1-services_page.html">Services</a></li>
+                    <li class="mr-3 py-2 px-4"><a href="1-products.html">Products</a></li>
+                    <li class="mr-3 py-2 px-4"><a href="1-About.html">About</a></li>
                 </ul>
             </nav>
             <!--Search box-->
@@ -85,9 +94,11 @@
                                 <p class="text-left pl-3 text-black uppercase">0245665666</p>
                             </div>
                         </a>
+                       
                     </div>
                 </div>
             </article>
         </section>
+        <script src="/static/js/profile.js"></script>
     </body>
 </html>
