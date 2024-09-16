@@ -17,7 +17,7 @@ class Store(BaseModel, Base):
         longitude = Column(Float, nullable=True)
         description = Column(String(1024), nullable=True)
         image_url = Column(String(128), nullable=True)
-        contact = Column(String(12), nullable=False)
+        contact = Column(String(13), nullable=False)
         opening_time = Column(Time, nullable=False, default="00:00")
         closing_time = Column(Time, nullable=False, default="23:59")
         reviews = relationship("Review", backref="store")
